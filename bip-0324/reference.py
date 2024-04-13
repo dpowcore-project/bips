@@ -600,13 +600,13 @@ def v2_ecdh(priv, ellswift_theirs, ellswift_ours, initiating):
 
 ### Key derivation
 
-NETWORK_MAGIC = b'\xf9\xbe\xb4\xd9'
+NETWORK_MAGIC = b'\xf2\x9f\x4a\xfb'
 
 def initialize_v2_transport(ecdh_secret, initiating):
     """Return a peer object with various BIP324 derived keys and ciphers."""
 
     peer = {}
-    salt = b'bitcoin_v2_shared_secret' + NETWORK_MAGIC
+    salt = b'dpowcoin_v2_shared_secret' + NETWORK_MAGIC
     for name, length in (
         ('initiator_L', 32), ('initiator_P', 32), ('responder_L', 32), ('responder_P', 32),
         ('garbage_terminators', 32), ('session_id', 32)):
